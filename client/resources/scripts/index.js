@@ -2,18 +2,18 @@ function handleOnLoad(){
     populateList();
 }
 
-function HandleOnChange(){
+function handleOnChange(){
     const selectedId = document.getElementById("selectListBox").value;
     bookList.forEach((book)=>{
         if(book.id == selectedId){
             myBook = book;
         }
+     });
+
     
-    });
+     populateForm();
 
-    populateForm();
-
-}
+    }
 
 function handleEditClick(){
     makeEditable();
@@ -51,7 +51,7 @@ function handleDeleteClick(){
 
 }
 
-function handleCancelsave(){
+function handleCancelSave(){
     populateForm();
     makeReadOnly();
     showButtons();
@@ -76,14 +76,14 @@ function handleNewSave(){
 
 
 function populateForm(){
-    document.getElementById("bookTitle").value= myBook.title;
-    document.getElementById("bookAuthor").value= myBook.author;
-    document.getElementById("bookGenre").value= myBook.genre;
-    document.getElementById("bookAvlb").value= myBook.numAvlb;
-    document.getElementById("bookIsbn").value= myBook.isbn;
-    document.getElementById("bookLength").value= myBook.length;
-    document.getElementById("bookCover").value= myBook.cover;
-    var html = "<img class = \"coverArt\" src= \"" + myBook.cover + "\"><\img>";
+    document.getElementById("bookTitle").value = myBook.title;
+    document.getElementById("bookAuthor").value = myBook.author;
+    document.getElementById("bookGenre").value = myBook.genre;
+    document.getElementById("bookAvlb").value = myBook.numAvlb;
+    document.getElementById("bookIsbn").value = myBook.isbn;
+    document.getElementById("bookLength").value = myBook.length;
+    document.getElementById("bookCover").value = myBook.cover;
+    var html = "<img class = \"coverArt\" src= \"" + myBook.cover + "\"></img>";
     document.getElementById("picBox").innerHTML = html;
 }
 
